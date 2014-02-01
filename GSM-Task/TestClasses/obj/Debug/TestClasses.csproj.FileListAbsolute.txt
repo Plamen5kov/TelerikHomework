@@ -1,0 +1,7 @@
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\bin\Debug\TestClasses.dll
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\bin\Debug\TestClasses.pdb
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\bin\Debug\ClassLibGSM.dll
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\bin\Debug\ClassLibGSM.pdb
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\obj\Debug\TestClasses.dll
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\obj\Debug\TestClasses.pdb
+E:\Programs\Repos\Repo1\OOP-1\TestClasses\obj\Debug\TestClasses.csprojResolveAssemblyReference.cache

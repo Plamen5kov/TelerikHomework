@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone", "MobilePhone\MobilePhone.csproj", "{4E97F96D-0494-4E05-9871-1291A1DB6405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibGSM", "ClassLibGSM\ClassLibGSM.csproj", "{EC65DEFA-48AF-46DA-B370-48E095A0879C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClasses", "TestClasses\TestClasses.csproj", "{3FD2B487-3B7C-40C7-A082-DAE29E14B018}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E97F96D-0494-4E05-9871-1291A1DB6405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E97F96D-0494-4E05-9871-1291A1DB6405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E97F96D-0494-4E05-9871-1291A1DB6405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E97F96D-0494-4E05-9871-1291A1DB6405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC65DEFA-48AF-46DA-B370-48E095A0879C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC65DEFA-48AF-46DA-B370-48E095A0879C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC65DEFA-48AF-46DA-B370-48E095A0879C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC65DEFA-48AF-46DA-B370-48E095A0879C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD2B487-3B7C-40C7-A082-DAE29E14B018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD2B487-3B7C-40C7-A082-DAE29E14B018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD2B487-3B7C-40C7-A082-DAE29E14B018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD2B487-3B7C-40C7-A082-DAE29E14B018}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+C:\Users\994x\documents\visual studio 2013\Projects\CSharp-OOP-1\ClassLibGSM\bin\Debug\ClassLibGSM.dll
+C:\Users\994x\documents\visual studio 2013\Projects\CSharp-OOP-1\ClassLibGSM\bin\Debug\ClassLibGSM.pdb
+C:\Users\994x\documents\visual studio 2013\Projects\CSharp-OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.csprojResolveAssemblyReference.cache
+C:\Users\994x\documents\visual studio 2013\Projects\CSharp-OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.dll
+C:\Users\994x\documents\visual studio 2013\Projects\CSharp-OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.pdb
+E:\Programs\Repos\Repo1\OOP-1\ClassLibGSM\bin\Debug\ClassLibGSM.dll
+E:\Programs\Repos\Repo1\OOP-1\ClassLibGSM\bin\Debug\ClassLibGSM.pdb
+E:\Programs\Repos\Repo1\OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.csprojResolveAssemblyReference.cache
+E:\Programs\Repos\Repo1\OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.dll
+E:\Programs\Repos\Repo1\OOP-1\ClassLibGSM\obj\Debug\ClassLibGSM.pdb
