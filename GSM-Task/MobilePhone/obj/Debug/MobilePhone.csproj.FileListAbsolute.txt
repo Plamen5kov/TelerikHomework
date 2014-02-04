@@ -16,3 +16,6 @@ E:\Programs\Repos\Repo1\OOP-1\MobilePhone\bin\Debug\ClassLibGSM.pdb
 E:\Programs\Repos\Repo1\OOP-1\MobilePhone\obj\Debug\MobilePhone.csprojResolveAssemblyReference.cache
 E:\Programs\Repos\Repo1\OOP-1\MobilePhone\bin\Debug\TestClasses.dll
 E:\Programs\Repos\Repo1\OOP-1\MobilePhone\bin\Debug\TestClasses.pdb
+E:\Programs\GitHubRepo\GSM-Task\MobilePhone\bin\Debug\MobilePhone.exe.config
+E:\Programs\GitHubRepo\GSM-Task\MobilePhone\obj\Debug\MobilePhone.exe
+E:\Programs\GitHubRepo\GSM-Task\MobilePhone\obj\Debug\MobilePhone.pdb
