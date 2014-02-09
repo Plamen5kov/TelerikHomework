@@ -1,0 +1,5 @@
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\ExtensionMethods\bin\Debug\ExtensionMethods.dll
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\ExtensionMethods\bin\Debug\ExtensionMethods.pdb
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\ExtensionMethods\obj\Debug\ExtensionMethods.dll
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\ExtensionMethods\obj\Debug\ExtensionMethods.pdb
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\ExtensionMethods\obj\Debug\Classes.csprojResolveAssemblyReference.cache

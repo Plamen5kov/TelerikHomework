@@ -1,0 +1,8 @@
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\bin\Debug\MainProgram.exe.config
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\bin\Debug\MainProgram.exe
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\bin\Debug\MainProgram.pdb
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\bin\Debug\ExtensionMethods.dll
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\bin\Debug\ExtensionMethods.pdb
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\obj\Debug\MainProgram.csprojResolveAssemblyReference.cache
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\obj\Debug\MainProgram.exe
+E:\Programs\Solutions\ExtensionMethods-Delegates-lambdaExpressions\MainProgram\obj\Debug\MainProgram.pdb
