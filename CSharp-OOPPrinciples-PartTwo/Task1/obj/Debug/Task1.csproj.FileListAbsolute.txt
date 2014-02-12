@@ -1,0 +1,6 @@
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\bin\Debug\Task1.exe.config
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\bin\Debug\Task1.exe
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\bin\Debug\Task1.pdb
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\obj\Debug\Task1.exe
+E:\Programs\Solutions\CSharp-OOPPrinciples-PartTwo\Task1\obj\Debug\Task1.pdb
