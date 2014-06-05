@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+    <canvas id="the-canvas" width="400" height="400" />
+    <script>
+        var canvas = document.getElementById('the-canvas');
+        var ctx = canvas.getContext('2d');
+
+        drawTriangle(10, 120, 230, 110, 'brown');
+        drawRectangle(10, 120, 230, 230, 'brown');
+        drawWindow(30, 160);
+        drawWindow(140, 160);
+        drawWindow(140, 270);
+
+
+        //DOOR
+        ctx.strokeStyle = 'black';
+        ctx.moveTo(40, 400);
+        ctx.beginPath();
+        ctx.lineTo(40, 350);
+        ctx.lineTo(40, 300);
+        ctx.arcTo(60, 250, 110, 390, 20);
+        ctx.lineTo(78, 350);
+        ctx.moveTo(59, 350);
+        ctx.lineTo(59, 350);
+        ctx.lineTo(59, 286);
+        ctx.closePath();
+        ctx.stroke();
+
+        //DOOR HANDLES
+        ctx.beginPath();
+        ctx.arc(54, 330, 3, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(64, 330, 3, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.closePath();
+
+        //CHIMNEY
+
+        ctx.beginPath();
+        ctx.fillStyle = 'brown';
+        ctx.moveTo(200, 100);
+        ctx.lineTo(200, 30);
+        ctx.arcTo(180, 15, 50, 70, 40);
+        ctx.lineTo(160, 100);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.moveTo(160, 25);
+        ctx.arcTo(180, 36, 350, 0, 52);
+        ctx.stroke();
+        ctx.fill();
+
+
+
+        function drawWindow(x, y) {
+            drawRectangle(x, y, 40, 20, 'black');
+            drawRectangle(x + 45, y, 40, 20, 'black');
+            drawRectangle(x, y + 25, 40, 20, 'black');
+            drawRectangle(x + 45, y + 25, 40, 20, 'black');
+        }
+
+        function drawRectangle(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+            ctx.strokeRect(x, y, width, height);
+        }
+
+        function drawTriangle(x, y, baseLength, height, color) {
+            ctx.fillStyle = color;
+            ctx.moveTo(x, y);
+            ctx.beginPath();
+            ctx.lineTo(x + baseLength, y);
+            ctx.lineTo(x + baseLength / 2, y - height);
+            ctx.lineTo(x, y);
+            ctx.fill();
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

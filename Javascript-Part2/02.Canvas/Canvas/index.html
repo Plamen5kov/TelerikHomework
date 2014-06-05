@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .kineticjs-content {
+            border: 1px solid black;
+        }
+
+        h1 {
+            margin-left: 50px;
+        }
+    </style>
+    <script src="/5.1.0/kinetic.min.js"></script>
+</head>
+<body>
+    <h1>DRAG THE BALL!</h1>
+    <div id="container"></div>
+    <script>
+        var row = 30,
+            col = 30,
+            rowDirection = 1,
+            colDirection = 1;
+
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: 400,
+            height: 400
+        }),
+            layer = new Kinetic.Layer();
+
+        var circle = new Kinetic.Circle({
+            x: col,
+            y: row,
+            radius: 30,
+            fill: 'red',
+            draggable: true,
+        });
+        var anim = new Kinetic.Animation(function () {
+            
+
+            if (row + circle.radius() >= stage.height() || row <= circle.radius()) {
+                rowDirection *= -1;
+            }
+            if (col + circle.radius() >= stage.width() || col <= circle.radius()) {
+                colDirection *= -1;
+            }
+
+            row += rowDirection;
+            col += colDirection; // calculate new position
+            circle.setY(row);
+            circle.setX(col); // set new position
+            circle.move(row, col); // move to new position
+
+        }, layer);
+
+        layer.add(circle);
+        stage.add(layer); // stroke
+
+        circle.on('mousedown', function () {
+            anim.stop();
+            circle.setFill('blue');
+            circle.startDrag();
+        });
+        circle.on('mouseup', function () {
+            col = circle.getAbsolutePosition().x; // getPosition -> relative position
+            row = circle.getAbsolutePosition().y;
+            circle.setFill('red');
+            anim.start();
+        });
+    </script>
+</body>
+</html>

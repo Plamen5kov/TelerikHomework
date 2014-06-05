@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="../kinetic.min.js"></script>
+    <script>
+        var grid,
+            stageWidth = 200,
+            stageHeight = 200,
+            direction = 'none',
+            directionX = 0,
+            directionY = 0,
+            snakeWidth = 10,
+            snakeHeight = 10,
+            snake = [],
+            row = 20,
+            col = 20;
+
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: stageWidth,
+            height: stageHeight
+        });
+
+        var layer = new Kinetic.Layer();
+
+        var snakePart = new Kinetic.Rect({
+            x: 20,
+            y: 20,
+            width: snakeWidth,
+            height: snakeHeight,
+            fill: 'blue'
+        });
+        
+
+        for (var i = 0; i < 5; i++) {
+            snakePart.setX(i*10);
+            snakePart.setY(10);
+            snake.push(snakePart.clone());
+        }
+
+        for (var i = 0; i < 5; i++) {
+            layer.add(snake[i]);
+        }
+
+        var animation = new Kinetic.Animation(function () {
+            for (var i = 0; i < 5; i++) {
+                col += 1;
+                snake[i].setX(col);
+                snake[i].move(row, col);
+            }
+        }, layer)
+
+        animation.start();
+        stage.add(layer);
+
+        function changeDirection(direction) {
+            if (direction === 'down') {
+                directionX = 0;
+                directionY = 1;
+            }
+            if (direction === 'right') {
+                directionX = 1;
+                directionY = 0;
+            }
+            if (direction === 'up') {
+                directionX = 0;
+                directionY = -1;
+            }
+            if (direction === 'left') {
+                directionX = -1;
+                directionY = 0;
+            }
+        }
+
+
+        document.addEventListener('keydown', function (e) {
+
+            if (e.keyCode == 40) {
+                direction = 'down';
+            }
+            if (e.keyCode == 39) {
+                direction = 'right';
+            }
+            if (e.keyCode == 38) {
+                direction = 'up';
+            }
+            if (e.keyCode == 37) {
+                direction = 'left';
+            }
+        });
+    </script>
+</body>
+</html>

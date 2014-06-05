@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+    <canvas id="the-canvas" width="400" height="400" />
+    <script>
+        var canvas = document.getElementById('the-canvas');
+        var ctx = canvas.getContext('2d');
+        var row = 300,
+            col = 40,
+            radius = 5,
+            rowDirection = 2
+        colDirection = 2
+
+        function bounce() {
+
+            ctx.clearRect(row-10, col-10, 20, 20);
+            
+
+            if (row + radius >= 395 || row + radius <= 5) {
+                rowDirection *= -1;
+            }
+            if (col + radius >= 395 || col + radius <= 5) {
+                colDirection *= -1;
+            }
+
+            row += rowDirection;
+            col += colDirection;
+			drawCircle(row, col);
+			
+            requestAnimationFrame(bounce);
+
+        }
+
+        bounce();
+
+        function drawCircle(x, y) {
+            ctx.beginPath();
+            ctx.fillStyle = 'black';
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

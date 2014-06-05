@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+    <canvas id="the-canvas" width="400" height="400" />
+    <script>
+        var canvas = document.getElementById('the-canvas');
+        var ctx = canvas.getContext('2d');
+
+        //HEAD
+        drawFullCircle(145, 140, 50, 1, 1, 'lightblue', 'black');
+        //EYES
+        drawFullCircle(78, 180, 10, 1.5, 0.7, 'lightblue', 'black'); //left
+        drawFullCircle(94, 66, 3, 1.2, 1.9, 'lightblue', 'black'); // inner eye
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        drawFullCircle(107, 180, 10, 1.5, 0.7, 'lightblue', 'black'); //right
+        drawFullCircle(130, 66, 3, 1.2, 1.9, 'lightblue', 'black'); // inner eye
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        //NOSE
+        ctx.beginPath();
+        ctx.moveTo(137, 134);
+        ctx.lineTo(134, 150);
+        ctx.lineTo(140, 150);
+        ctx.stroke();
+        //MOUTH
+        ctx.beginPath();
+        ctx.moveTo(120, 160);
+        ctx.arcTo(147, 150, 150, 160, 20);
+        ctx.arcTo(125, 167, 20, 30, 20);
+        ctx.stroke();
+        // HAT
+        drawFullCircle(50, 220, 25, 3, 0.5, 'blue', 'black'); // base
+        drawFullCircle(97, 252, 25, 1.5, 0.4, 'blue', 'black'); //botton 
+        ctx.fillRect(107, 40, 77, 60); // cylinder
+        drawFullCircle(97, 100, 25, 1.5, 0.4, 'blue', 'black'); // top
+
+        function drawFullCircle(x, y, r, scaleX, scaleY, fillColor, strokeColor) {
+            ctx.beginPath();
+            ctx.fillStyle = fillColor;
+            ctx.strokeStyle = strokeColor;
+            ctx.save();
+            ctx.scale(scaleX, scaleY);
+            ctx.arc(x, y, r, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        }
+    </script>
+</body>
+</html>
