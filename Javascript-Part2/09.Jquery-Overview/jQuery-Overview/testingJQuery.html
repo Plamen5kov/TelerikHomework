@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="libs/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $('<div />') // create element
+            .insertBefore('script')// move element
+
+            // ADD TO ELEMENT
+            .addClass('addedDiv')
+            .removeClass('someClass') // removes class if present
+            .append('<h1>ON CKICK DIV WILL TURN BLUE </h1>Some random text we append as text to the div we are creating.') // it will add to innerHtml not to InnerText
+
+
+            //STYLING
+            .css('width', '400px')
+            .css('height', '200px')
+            .css('border', '1px solid black')
+
+            //EVENTS
+            .on('click', function () {
+                //$('.addedDiv').css('background-color', 'lightblue'); // another way to do the same thing
+                this.style.backgroundColor = 'lightblue';
+            })
+            .on('mouseout', changeBackgroundColor) // call function from outside
+            //.slideToggle(1000, function () { alert('done sliding');}); // slides the element and calls a function when it's done(can be used withoud the second parameter)
+            //.fadeOut(1000); // the element fades out in given time (can be callled with a second parameter function .. when fading is compleate calles the second parameter)
+            //.replaceWith('<span>Replaced span!</span>'); // can replace whatever you have done up till now with something else
+            .animate({ opacity: 0.5 }, 1000) // animates whatever property you give
+            //.animate({ width: 100, height: 100 }, 4000) // will perform multiple animations one after the other
+            //.animate({width: 400, height: 200, marginLeft: 200}, 4000);
+            
+            // ECAMPLE FOR BINDING
+            //$("#foo").bind("mouseenter mouseleave", function () {
+            //    $(this).toggleClass("entered");
+            //}); 
+
+            //$("#foo").bind({
+            //    click: function () {
+            //        // Do something on click
+            //    },
+            //    mouseenter: function () {
+            //        // Do something on mouseenter
+            //    }
+            //});
+
+
+        function changeBackgroundColor() { 
+            this.style.backgroundColor = 'white';
+        }
+        //var $theDiv = $('div').get(0); // no idea why the selected element has to be called with get(0) or get(1) or why does get() return two identical dom element
+        var $theDiv = $('div').html();
+        console.log('div: ' + $theDiv);
+
+        $('<div/>')
+            .insertAfter('.addedDiv') // get or set
+            //.val('#aas'); //can't get it to work
+            .html('<span>added first</span>') // get or set
+            .text('<span> added later</span>') // get or set
+            .width(200); // can be added as a string with pixels too: '100px'
+
+        var outside = 'outside';
+        var foo = function () {
+            //console.log("foo: " + string1, string2);
+            outside = 'called from function foo';
+        };
+        //var notVoid = function (input) {
+        //    console.log('msg: ' + input);
+        //}
+        //var bar = function (value) {
+        //    console.log("bar: " + value);
+        //};
+
+        var callbacks = $.Callbacks();
+
+        console.log('global var has value: ' + outside);
+
+        console.log('---------------');
+        callbacks.add(foo);
+        callbacks.fire("first message fired", ' second message fired');
+        console.log('---------------');
+
+        console.log('global var has value: ' + outside);
+        //callbacks.add(notVoid);
+        //callbacks.add(bar);
+
+        // Fire the items on the list
+        //callbacks.fire("first message fired", ' second message fired');
+        
+    </script>
+</body>
+</html>

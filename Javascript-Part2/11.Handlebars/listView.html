@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="libs/handlebars.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
+</head>
+<body>
+<!--FIRST EXAMPLE -->
+<ul id="books-list" data-template="book-item-template">
+
+</ul>
+<script id="book-item-template" type="text/x-handlebars-template">
+    {{#each data}}
+    <li class="book-item">
+        <a href="/#books/{{id}}">
+            <strong>{{title}}</strong>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+<!--SECOND EXAMPLE -->
+<div id="author-list" data-template="author-item-template">
+
+</div>
+<script id="author-item-template" type="text/x-handlebars-template">
+    {{#each data}}
+    <p>Author: <span>{{name}}</span></p>
+    <p>Author: <span>{{special}}</span></p>
+    {{/each}}
+</script>
+    <script>
+        (function ($) {
+            $.fn.listview = function listview(data) {
+                var $container = this;
+
+                //find name of template to search for
+                var $templateToSearchFor = $container.attr('data-template');
+
+                //search for template
+                var template = $(document.body).find('#' + $templateToSearchFor).html();
+
+                //if found try to compile it with handlebars
+                if (template !== undefined) {
+                    var readyTemplate = Handlebars.compile(template);
+                    var readyHTML = readyTemplate({data: data});
+                    $container.html(readyHTML);
+                }
+                return $container;
+            }
+        })(jQuery);
+
+        // FIRST EXAMPLE
+        var data = [
+            {
+                id: '1',
+                title: 'some title'
+            },
+            {
+                id: '2',
+                title: 'some other title'
+            },
+        ];
+
+        $('#books-list').listview(data)
+                .css('background-color', 'lightblue');
+
+        // SECOND EXAMPLE
+        var authors = [
+            {
+                name: 'JK ROWLING',
+                special: 'something special about her'
+            },
+            {
+                name: 'JK aasdlá;slhda;sdjasl;ssd;lkasd',
+                special: 'somethingasdlk;askld speciaasda?SKDha;sdhklals;kdasl about her'
+            },
+        ]
+
+        $('#author-list').listview(authors)
+                .css('background-color', 'lightgreen')
+                .css('display', 'inline-block');
+    </script>
+</body>
+</html>

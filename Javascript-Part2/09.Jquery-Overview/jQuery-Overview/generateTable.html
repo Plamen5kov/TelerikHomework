@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Generated table via jQuery</title>
+    <script src="libs/jquery.min.js"></script>
+    <style>
+        table { 
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var data = [
+            {
+                firstName: 'Peter',
+                lastName: 'Ivanov',
+                grade: 3
+            },
+            {
+                firstName: 'Milena',
+                lastName: 'Grigorova',
+                grade: 6
+            },
+            {
+                firstName: 'Gergana',
+                lastName: 'Borisova',
+                grade: 12
+            },
+            {
+                firstName: 'Boyko',
+                lastName: 'Petrov',
+                grade: 17
+            },
+        ];
+
+        $('body').append('<table />');
+        var $table = $('table');
+
+        var dataLen = data.length;
+        for (var row = 0; row < dataLen + 1; row++) {
+            $table.append('<tr />')
+        }
+
+        $('tr').first()
+            .append('<td>First Name</td>')
+            .append('<td>Last Name</td>')
+            .append('<td>Grade</td>');
+
+        var $allTr = $('tr');
+        for (var i = 0; i <= dataLen; i++) {
+            $($allTr[i + 1])
+                .append('<td>' + data[i].firstName + '</td>')
+                .append('<td>' + data[i].lastName + '</td>')
+                .append('<td>' + data[i].grade + '</td>')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<input type="text" id="divsCounter"/>
+		<a href="#" onclick="drawingDivs()" >Generate </a>
+
+
+	<script type="text/javascript">
+		function generateDiv() {
+			var div = document.createElement('div'),
+				style = div.style;
+				strong = document.createElement('strong'),
+				strongContent = document.createTextNode('DIV');
+
+			strong.appendChild(strongContent);
+			div.appendChild(strong);
+
+			style.width = getRandomInt(100, 10) + 'px';
+			style.height = getRandomInt(100,10) + 'px';
+			style.backgroundColor = generateColor();
+			style.color = generateColor();
+			style.textAlign = 'center';
+			style.position = 'absolute';
+			style.top = getRandomInt(100,1) + '%';
+			style.left = getRandomInt(100,1) + '%';
+			style.borderStyle = ['solid','dashed','dotted'][getRandomInt(2,0)];
+			style.borderColor = generateColor();
+			style.borderRadius = getRandomInt(20,1) + '%';
+			style.borderWidth = getRandomInt(30,1) + 'px';
+
+			 return div;
+		}
+
+		function drawingDivs() {
+			var counter = document.getElementById('divsCounter').value | 0,
+				fragment = document.createDocumentFragment();
+				for (var i = 0; i < counter; i++) {
+					fragment.appendChild(generateDiv());
+				}
+				console.log(fragment);
+
+				document.body.appendChild(fragment);	
+
+		}
+
+		function getRandomInt(max, min) {
+			if(!min) min = 1;
+		  	return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function generateColor() {
+			var randomRed = getRandomInt(255);
+			var randomGreen = getRandomInt(255);
+			var randomBlue = getRandomInt(255);
+
+			return 'rgb(' + randomRed + ',' + randomGreen + ',' + randomBlue + ')';
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <input id="grocery" type="text" value=""/>
+        <input id="addButton" type="button" value="add grocery" />
+        <p>
+            <a href="#">show hidden groceries</a>
+        </p>
+    </div>
+    <ul id="todoList">
+    </ul>
+    <script>
+        (function () {
+            var list = document.getElementById('todoList'),
+                addButton = document.getElementById('addButton'),
+                showHidden = document.getElementsByTagName('a')[0];
+
+            addButton.addEventListener('click', addGrocery);
+            showHidden.addEventListener('click', showHiddenGroceries);
+
+            function addGrocery() {
+                var newListItem = document.createElement('li'),
+                    closeButtton = '<input class="closeButton"  type="button" value="x" />',
+                    hideButton = '<input class="hideButton"  type="button" value="hide" />',
+                    grocery = document.getElementById('grocery').value;
+
+                if (grocery === '') {
+                    alert('grocery has to be at least one letter long')
+                }
+                else {
+
+                    newListItem.innerHTML += closeButtton;
+                    newListItem.innerHTML += hideButton
+                    newListItem.innerHTML += grocery;
+                    list.appendChild(newListItem);
+                    
+                    var closeBtn = newListItem.getElementsByClassName('closeButton')[0];
+                    closeBtn.addEventListener('click', deleteGrocery);
+                    var hideBtn = newListItem.getElementsByClassName('hideButton')[0];
+                    hideBtn.addEventListener('click', hideGrocery);
+                }
+            }
+
+            function deleteGrocery() {
+                var li = this.parentElement;
+                li.parentElement.removeChild(li);
+            }
+
+            function hideGrocery() {
+                var li = this.parentElement;
+                li.style.display= 'none';
+            }
+
+            function showHiddenGroceries() {
+                var allGroceries = document.getElementsByTagName('li');
+                
+                for (var currentGrocery = 0, length = allGroceries.length; currentGrocery < length; currentGrocery++) {
+                    if (allGroceries[currentGrocery].style.display === 'none') {
+                        allGroceries[currentGrocery].style.display = 'block';
+                    }
+                }
+            }
+        })()
+    </script>
+</body>
+</html>

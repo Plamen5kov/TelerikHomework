@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>slider</title>
+    <script src="libs/jquery.min.js"></script>
+    <style>
+        body, div, button {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 50px;
+            left: 400px;
+            border: 1px solid black;
+        }
+
+        #content {
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #content > div {
+            width: 500px;
+            height: 500px;
+            display: none;
+            opacity: 0.6;
+        }
+
+            #content > .current {
+                display: inline-block;
+                position: relative;
+            }
+
+        #leftBtn {
+            float: left;
+        }
+
+        #rightBtn {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div style="background-color: yellow" class="current">
+                <a href="#">Some link to somewhere</a>
+            </div>
+            <div style="background-color: blue">
+            </div>
+            <div style="background-color: green"></div>
+            <div style="background-color: black"></div>
+            <div style="background-color: orange"></div>
+        </div>
+
+        <div id="buttons">
+            <input id="leftBtn" type="button" value="<" />
+            <input id="rightBtn" type="button" value=">" />
+        </div>
+    </div>
+    <script>
+        $('#leftBtn').on('click', slideLeft);
+
+        $('#rightBtn').on('click', slideRight);
+
+        function slideLeft() {
+            changeSlide(true)
+        }
+
+        function slideRight() {
+            changeSlide()
+        }
+
+        var interval = setInterval(changeSlide, 5000);;
+
+        var changeSlide = function changeSlide(previous) {
+            // resets the interval
+            clearInterval(interval);
+            interval = setInterval(changeSlide, 5000);
+
+            //select elements
+            var $currentElement = $('.current');
+            var $nexElement = $currentElement.next();
+            if (previous) {
+                $nexElement = $currentElement.prev();
+            }
+
+            //if the next element is not existing select the first
+            if (!$nexElement.is('div')) {
+                $nexElement = $('#content > div').first();
+            }
+
+            //change classes
+            $currentElement.removeClass('current');
+            $nexElement.addClass('current');
+        }
+
+
+    </script>
+</body>
+</html>

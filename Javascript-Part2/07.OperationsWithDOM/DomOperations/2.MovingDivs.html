@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="circleStyle.css" rel="stylesheet" />
+    <style>
+    .ball {
+    width: 5px;
+    height: 5px;
+    border: 3px solid #900;
+    border-radius: 50%;
+    position: absolute; /*try writing position relative and each ball is relative to the one before it*/
+	}
+
+	#wrapper {
+	    position: relative;
+	    left: 50px;
+	    top: 50px;
+	}
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+    <script>
+	var element = document.getElementsByClassName('ball'),
+	 	angle = [0, 72, 144, 216, 288], // interval 72 so the balls can be evenly distributed
+		x = 0,
+		y = 0,
+		w = 30,
+		h = 30;
+
+	function ballCircle() {
+
+	    for (var i = 0; i < angle.length; i++) {
+	        x = w + w * Math.cos(angle[i] * Math.PI / 180);
+	        y = h + h * Math.sin(angle[i] * Math.PI / 180);
+
+	        element[i].style.left = x + 'px';
+	        element[i].style.top = y + 'px'; -
+
+	        angle[i]++;
+	        if (angle[i] > 360) {
+	            angle[i] = 0;
+	        }
+	    }
+	    setTimeout(ballCircle, 0);
+	}
+
+	ballCircle();
+    </script>
+</body>
+</html>

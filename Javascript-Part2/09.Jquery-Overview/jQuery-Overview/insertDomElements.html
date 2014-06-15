@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Inserting DOM elements</title>
+    <script src="libs/jquery.min.js"></script>
+</head>
+<body>
+    <h1>To see the change you'll have to look at the DOM tree</h1>
+    <label for="domElement" >Type in dom element</label>
+    <input id="domElement" type="text" />
+    <br/>
+    <label for="domTarget">Target dom element</label>
+    <input id="domTarget" type="text" />
+    <br />
+    <input id="insertBefore" type="button" value="insertBefore" />
+    <input id="insertAfter" type="button" value="insertAfter" />
+    <script>
+
+        $('#insertBefore').on('click', insertBefore);
+        $('#insertAfter').on('click', insertAfter);
+
+        function insertBefore () {
+            insertElement('before');
+        }
+        function insertAfter() {
+            insertElement('after');
+        }
+
+
+        function insertElement(where) {
+            var $domElement = $('#domElement').val(),
+                $domTarget = $('#domTarget').val();
+
+            if (where === 'before') {
+                $('<' + $domElement + '/>').insertBefore($domTarget);
+            }
+            else if (where === 'after') {
+                $('<' + $domElement + '/>').insertAfter($domTarget);
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

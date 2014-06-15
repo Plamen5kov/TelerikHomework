@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="libs/handlebars.min.js"></script>
+</head>
+<body>
+    <div id="select-template-container">
+
+    </div>
+    <script id="select-template" type="text/x-handlebars-template" >
+        <select>
+            {{#each options}}
+            <option id="{{id}}" >
+                {{text}}
+            </option>
+            {{/each}}
+        </select>
+    </script>
+    <script>
+//        COPY PASTE DRIVEN DEVELOPMENT FOR THE WIN
+        var options = [
+            {
+                value: '1',
+                text: 'One'
+            },
+            {
+                value: '2',
+                text: 'Two'
+            },
+            {
+                value: '3',
+                text: 'Three'
+            },
+            {
+                value: '4',
+                text: 'Four'
+            },
+            {
+                value: '5',
+                text: 'Five'
+            },
+            {
+                value: '6',
+                text: 'Six'
+            }
+        ];
+
+
+        // give me your template
+        var selectTemplate = document.getElementById('select-template').innerHTML;
+
+        //i'll make it into a template handlebars understands
+        var readyTemplate = Handlebars.compile(selectTemplate);
+
+        //ok you can use it now with your data
+        var readyToUseHTML = readyTemplate({options : options});
+
+        //attach the result to your container
+        document.getElementById('select-template-container').innerHTML = readyToUseHTML;
+    </script>
+</body>
+</html>

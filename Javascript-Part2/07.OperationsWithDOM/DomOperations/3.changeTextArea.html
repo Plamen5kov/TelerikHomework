@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input id="background" type="color" />
+    <input id="backgroundBtn" type="button" value="aplly" />
+    <span>Change background color</span>
+    <br />
+    <input id="text" type="color" />
+    <input id="textBtn" type="button" value="aplly" />
+    <span>Change text color</span>
+
+    <p>Write some text in the text area.</p>
+    <textarea style="display: block; width: 500px; height: 200px"></textarea>
+
+    <script>
+        var textarea = document.getElementsByTagName('textarea')[0],
+            bgColorBtn = document.getElementById('backgroundBtn'),
+            textColorBtn = document.getElementById('textBtn');
+        
+        bgColorBtn.addEventListener('click', applyBackgroundColor);
+        textColorBtn.addEventListener('click', applyTextColor);
+
+        function applyBackgroundColor() {
+            var bgColorBox = document.getElementById('background').value;
+            textarea.style.backgroundColor = bgColorBox;
+        }
+
+        function applyTextColor() {
+            var textColorBox = document.getElementById('text').value;
+            textarea.style.color = textColorBox;
+        }
+
+    </script>
+</body>
+</html>

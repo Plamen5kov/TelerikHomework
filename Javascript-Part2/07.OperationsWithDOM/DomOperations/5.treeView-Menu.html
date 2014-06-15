@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+   
+</head>
+<body>
+    <ul>
+        <li>
+            <input class="menuButton" type="button" value=">" />
+            home
+            <ul>
+                <li>SUB out of ideas 0</li>
+                <li>SUB out of ideas 0</li>
+                <li>SUB out of ideas 0</li>
+                <li>
+                    <input class="menuButton" type="button" value=">" />SUB out of ideas 0
+                    <ul>
+                        <li>asdasd</li>
+                        <li>awafgfga</li>
+                        <li>afffffffffffff</li>
+                        <li>afawdassass</li>
+                        <li>ggagww</li>
+                    </ul>
+                </li>
+                <li>SUB out of ideas 0</li>
+            </ul>
+        </li>
+        <li>
+            
+            contacts
+        </li>
+        <li>
+            <input class="menuButton" type="button" value=">" />
+            out of ideas 0
+            <ul>
+                <li>SUB out of ideas 0</li>
+                <li>SUB out of ideas 1</li>
+                <li>SUB out of ideas 2</li>
+                <li>
+                    <input class="menuButton" type="button" value=">" />
+                    SUB out of ideas 3
+                    <ul>
+                        <li>asd</li>
+                        <li>afasd</li>
+                        <li>asfsew</li>
+                        <li>hasdasd</li>
+                        <li>aasdasd</li>
+                    </ul>
+                </li>
+                <li>SUB out of ideas 4</li>
+            </ul>
+        </li>
+        <li>
+            <input class="menuButton" type="button" value=">" />
+            out of ideas 1
+            <ul>
+                <li>SUB out of ideas 0</li>
+                <li>SUB out of ideas 1</li>
+                <li>SUB out of ideas 2</li>
+                <li>
+                    <input class="menuButton" type="button" value=">" />
+                    SUB out of ideas 3
+                    <ul>
+                        <li>wgfafs</li>
+                        <li>gsdfwe</li>
+                        <li>adfafw</li>
+                        <li>asdaew</li>
+                        <li>ggasawa</li>
+                    </ul>
+                </li>
+                <li>SUB out of ideas 4</li>
+            </ul>
+        </li>
+        <li>
+            out of ideas 2
+        </li>
+    </ul>
+    <script>
+        (function () {
+            var buttons = document.getElementsByClassName('menuButton');
+            
+            for (var i = 0, length = buttons.length; i < length; i++) {
+                buttons[i].addEventListener('click', expandOrCollapse);
+            }
+
+            var subUls = document.querySelectorAll('ul ul');
+            for (var i = 0, length = subUls.length; i < length; i++) {
+                subUls[i].style.display = 'none';
+            }
+
+            function expandOrCollapse() {
+                var ul = this.parentElement.getElementsByTagName('ul')[0];
+                if (ul.style.display === 'none') {
+                    ul.style.display = 'block';
+                }
+                else {
+                    ul.style.display = 'none';
+                }
+            }
+        })()
+    </script>
+</body>
+</html>

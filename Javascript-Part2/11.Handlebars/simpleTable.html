@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="libs/handlebars.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+        table th {
+            background-color: #999;
+            border: 1px solid black;
+        }
+
+        tbody tr:nth-of-type(2n) {
+            background-color: #CCC;
+        }
+
+        table td{
+            border: 1px solid black;
+            padding: 2px;
+
+        }
+
+        table {
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="table-template-container">
+
+    </div>
+    <script type="text/x-handlebars-template" id="table-template" >
+        <table>
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Title</th>
+                <th>Data#1</th>
+                <th>Data#2</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{title}}</td>
+                <td>{{date1}}</td>
+                <td>{{date2}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </script>
+    <script>
+        //        COPY PASTE DRIVEN DEVELOPMENT FOR THE WIN
+
+        var data = [
+            {
+                id: '1',
+                title: 'Course introduction',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            },
+            {
+                id: '2',
+                title: 'Document Object Model',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            },
+            {
+                id: '3',
+                title: 'So on',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            },
+            {
+                id: '4',
+                title: 'and so on...',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            },
+            {
+                id: '5',
+                title: 'and so on...',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            },
+            {
+                id: '6',
+                title: 'and so on...',
+                date1: 'Wed 18:00, 28-May-2014',
+                date2: 'Thu 14:00, 29-May-2014'
+            }
+        ];
+
+        // give me your template
+        var postTemplateHTML = document.getElementById('table-template').innerHTML;
+
+        //i'll make it into a template handlebars understands
+        var postTemplate = Handlebars.compile(postTemplateHTML);
+
+        //ok you can use it now with your data
+        var resultHTML = postTemplate({data: data});
+
+        //attach the result to your container
+        document.getElementById('table-template-container').innerHTML = resultHTML;
+    </script>
+</body>
+</html>
