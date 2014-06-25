@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/hasProperty.js"></script>
+</head>
+<body>
+<h1>look at the console</h1>
+    <script>
+        var  person = {
+            firstName: 'FirstName',
+            lastName: 'LastName',
+            age: 123,
+            interests: {
+                list: ['fishing', 'running', 'coding']
+            },
+            bothEyes: true
+        };
+
+        console.log('WITH EXTENSION OF OBJ USING PROTOTYPE');
+        console.log('prop: interests: ' + person.hasProperty('interests')); //true
+        console.log('prop: randomProp: ' + person.hasProperty('randomProp')); //false
+
+        console.log('\nWITH FUNCTION');
+        console.log('prop interests: ' + hasProp(person, 'interests'));
+        console.log('prop asd: ' + hasProp(person, 'asd'));
+    </script>
+</body>
+</html>

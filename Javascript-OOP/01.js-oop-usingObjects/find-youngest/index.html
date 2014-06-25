@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/find-youngest-person.js"></script>
+</head>
+<body>
+<h1>look at the console</h1>
+<script>
+    var persons = [
+        {firstname : "Gosho", lastname: "Petrov", age: 32},
+        {firstname : "Bay", lastname: "Ivan", age: 81},
+        {firstname : "John", lastname: "Doe", age: 12},
+        {firstname : "Little", lastname: "Ivan", age: 3},
+    ];
+
+    var youngestPerson = persons.findYoungestPerson();
+    console.log('youngest person is: '
+            + youngestPerson.firstname + ' '
+            + youngestPerson.lastname + ' '
+            + youngestPerson.age);
+</script>
+</body>
+</html>

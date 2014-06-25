@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/group-people.js"></script>
+</head>
+<body>
+<script>
+    data = [
+        {firstName: 'Plamen', lastName: 'Petkov', age: 12},
+        {firstName: 'Svetla', lastName: 'Petkova', age: 12},
+        {firstName: 'Krasimir', lastName: 'Petkov', age: 13},
+        {firstName: 'Krasimir', lastName: 'Ivanov', age: 15},
+        {firstName: 'Krasimir', lastName: 'Stefanov', age: 18},
+        {firstName: 'Plamen', lastName: 'Ivanov', age: 12},
+    ];
+    var byFirstName = data.groupBy('firstName'),
+        byLastName = data.groupBy('lastName'),
+        byAge = data.groupBy('age');
+
+    console.log('---------GROUPED BY FIRST NAME---------------');
+    console.log(byFirstName);
+    console.log('\n-------------GROUPED BY LAST NAME------------------');
+    console.log(byLastName);
+    console.log('\n---------------GROUPED BY AGE----------------');
+    console.log(byAge);
+</script>
+</body>
+</html>

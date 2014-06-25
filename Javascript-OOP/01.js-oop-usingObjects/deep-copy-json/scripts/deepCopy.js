@@ -1,27 +1,15 @@
 function deepCopy(jsonObj) {
-    var copy = {};
+    var copy = jsonObj instanceof Array ? [] : {};
 
     for(var property in jsonObj) {
 
         //copy primitive type or function
-        if (typeof jsonObj[property] !== 'object') {
+        if ((typeof jsonObj[property]) !== 'object' || jsonObj[property] === null) {
             copy[property] = jsonObj[property];
         }
-        //copy object
+        //deep copy object
         else {
-            if (jsonObj[property]  === null) {
-                copy[property] = null;
-            }
-            else {
-                if (jsonObj[property] instanceof Object) {
-                    //call recursion here
-                    copy[property] = [];
-
-                    for(var inProp in jsonObj[property]) {
-                        copy[property][inProp]  = jsonObj[property][inProp];
-                    }
-                }
-            }
+            copy[property] = deepCopy(jsonObj[property]);
         }
     }
 
