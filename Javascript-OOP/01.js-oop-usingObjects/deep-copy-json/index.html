@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="libs/jquery.min.js"></script>
+    <script src="scripts/deepCopy.js"></script>
+    <script src="libs/deepCopy.js"></script>
+</head>
+<body>
+<script>
+    // all primitive types
+    var original = {
+        fname: 'first name',     //string
+        lname: 'last name',      //string
+        age: 12,                 //number
+        male: true,              //boolean
+        mentalState: undefined,  //undefined
+        arr: [1,2,3],            //object
+        objInside: {
+          propInsideNumber: 123,
+            propInsideString: 'test string'
+        },
+        children: null,          // object
+        toString: function toString() {
+            return this.fname + ' ' + this.lname;
+        }                       //function
+    };
+
+//    var copy = owl.deepCopy(original); // WORKS
+    var copy = deepCopy(original);
+
+    original.arr[1] = 'new element';
+    original.fname = 'tralalal';
+//
+    console.dir(original);
+    console.dir(copy);
+</script>
+</body>
+</html>
