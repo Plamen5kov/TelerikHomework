@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/special-console-module.js"></script>
+</head>
+<body>
+<h1>hi, look at the console</h1>
+<script>
+    // demo
+    specialConsole.writeLine('ordinary message'); // ORDINARY STRING
+    var msg = '{0} spetial {1}  message';
+    specialConsole.writeLine(msg, 'very', 'SPECIAL'); // STRING WITH PLACEHOLDERS
+
+    specialConsole.writeError('err: {0}', 'some error');
+    specialConsole.writeWarning('warning: {0} -> {1}', 'some warning', 'some other warning')
+</script>
+</body>
+</html>

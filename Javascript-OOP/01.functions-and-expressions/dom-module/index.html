@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/dom-module.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="outer">
+        <div class="inner">
+            inner div
+        </div>
+    </div>
+    <div class="outer">
+        <ul class="firstInnerList">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+        </ul>
+        <ul class="secondInnerList">
+        </ul>
+    </div>
+    <div class="outer">outer div</div>
+    <div class="outer">outer div 1</div>
+    <div class="outer">outer div 2</div>
+</div>
+<script>
+    //DEMO
+    domModule.appendChild('.inner', 'p');
+    domModule.removeElement('.firstInnerList', 'li:first-child');
+    domModule.addEventToElement('#wrapper', 'click', function () {
+        var wrapper = this;
+        wrapper.style.backgroundColor = 'lightblue';
+    });
+
+    // doesn't add elements until they are at least 5 (100 seemed like too much for a demo)
+    for (var i = 0; i < 4; i += 1) { // add 4 elements to the first list
+        domModule.appendToBuffer('.firstInnerList', 'li');
+    }
+    for (var i = 0; i < 5; i += 1) { // add 5 elements to the second list
+        domModule.appendToBuffer('.secondInnerList', 'li');
+    }
+//    domModule.addOneHunderedElements('.firstInnerList', 'li'); // add one more to the first list
+</script>
+</body>
+</html>

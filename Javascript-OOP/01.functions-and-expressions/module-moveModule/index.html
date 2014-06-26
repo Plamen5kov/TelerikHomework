@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/module-moving.js"></script>
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+    <input id="addElementBtn" type="button" value="add element"/>
+    <input id="circlesFaster" type="button" value="circles->faster"/>
+    <input id="rectsFaster" type="button" value="rects->faster"/>
+    <div id="mmContainer">
+
+    </div>
+    <script>
+        var addElementBtn = document.getElementById('addElementBtn'),
+                circlesFaster = document.getElementById('circlesFaster'),
+                rectsFaster = document.getElementById('rectsFaster');
+
+
+        addElementBtn.addEventListener('click', function () {
+            mm.createMovingElement('circle');
+            mm.createMovingElement('rect');
+        });
+
+        circlesFaster.addEventListener('click', mm.moveCirclesFaster);
+        rectsFaster.addEventListener('click', mm.moveRectsFaster);
+
+    </script>
+</body>
+</html>
