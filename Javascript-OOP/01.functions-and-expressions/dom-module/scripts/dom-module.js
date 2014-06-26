@@ -13,7 +13,7 @@ var domModule = (function () {
 
     var removeElement = function removeElement(selector, element) {
         var selector = document.querySelector(selector),
-            elementToRemove = document.querySelector(element);
+            elementToRemove = selector.querySelector(element);
 
         selector.removeChild(elementToRemove);
         };
