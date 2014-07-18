@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="scripts/libs/q.js"></script>
+    <script src="scripts/libs/jquery-2.0.3.js"></script>
+</head>
+<body>
+<input type="button" value="click me"/>
+<script>
+
+    $('input').on('click', function () {
+        getMapCoords().then(makeImage, error);
+    });
+
+    function getMapCoords() {
+        var defer = Q.defer();
+
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(position) {
+            defer.resolve(position);
+        }
+
+        function error(err) {
+            defer.reject(err);
+        }
+
+        return defer.promise;
+    }
+
+    function makeImage(position){
+        var imgSrc = "http://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=17&size=500x500&sensor=false";
+        $('<img src="'+imgSrc + '"/>').appendTo('body');
+    }
+
+    function error(err){
+        console.log('error from outside: ' + err.message);
+    }
+
+</script>
+</body>
+</html>
